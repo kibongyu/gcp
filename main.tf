@@ -16,6 +16,8 @@ variable "gcp_credentials" {
 provider "google" {
   project = "teak-flash-430301-c8"
   credentials = var.gcp_credentials
+  region = "europe-west1"
+  zone = "europe-west1-a"
 }
 
 resource "google_compute_network" "vpc_network" {
