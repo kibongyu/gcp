@@ -13,6 +13,15 @@ variable "gcp_credentials" {
   description = "Google Cloud service account credentials"
 }
 
+# 로컬 변수
+locals {
+  project = "cloudexperience"
+  env     = "wgpark"
+  stage   = "dev"
+  name    = "${local.project}-${local.env}-${local.stage}"
+  region  = "asia-northeast3"
+}
+
 provider "google" {
   project = "teak-flash-430301-c8"
   credentials = var.gcp_credentials
